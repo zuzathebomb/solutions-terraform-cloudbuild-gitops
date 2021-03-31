@@ -31,7 +31,7 @@ data "terraform_remote_state" "buckets" {
 }
 
 
-resource "google_project_iam_member" "project_viewer" {
+resource "google_project_iam_member" "proj_viewer" {
   project = var.project
   role    = "roles/viewer"
   member  = "user:zuzanna.dylegowska@flyonthecloud.com"
