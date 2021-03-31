@@ -15,3 +15,4 @@
 
 variable "project" {}
 variable "prefix" {}
+variable "state_bucket_name" {}

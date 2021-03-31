@@ -13,13 +13,23 @@
 # limitations under the License.
 
 locals {
-  env = "dev"
+  env = ${terraform.workspace}
 }
 
 
 provider "google" {
   project = var.project
 }
+
+data "terraform_remote_state" "buckets" {
+  backend = "gcs"
+
+  config = {
+    bucket = var.state_bucket_name
+    prefix = var.prefix
+  }
+}
+
 
 resource "google_project_iam_member" "project_viewer" {
   project = var.project

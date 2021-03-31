@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
+/*
 terraform {
   backend "gcs" {
     bucket = "sandbox-1-308009-tfstate"
     prefix = "env/sbx"
   }
 }
+*/
